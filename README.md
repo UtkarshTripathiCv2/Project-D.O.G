@@ -7,4 +7,5 @@ https://github.com/HumanSignal/labelImg/releases   FOR LABELIMG BUT IT GIVES IN 
  conda activate yolo-env1
  pip install label-studio
 
+ label-studio start
  THEN LABELSTUDIO FINALLY DOWNLOADED 
