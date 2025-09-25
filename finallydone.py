@@ -4,12 +4,8 @@ import numpy as np
 
 
 model = YOLO('DOG.pt')
-
-# --- Thresholds ---
 CONFIDENCE_THRESHOLD = 0.6
-HIGH_CONFIDENCE_THRESHOLD = 0.8
-
-
+HIGH_CONFIDENCE_THRESHOLD = 0.81
 HIGH_ACCURACY_CLASSES = [
     'Healthy Wheat', 'apple black rot', 'apple healthy', 'apple scab',
     'bell pepper bacterial spot', 'bell pepper healthy', 'cedar apple rust',
@@ -26,11 +22,10 @@ HIGH_ACCURACY_CLASSES = [
     'Strawberry leaf', 'Tomato Septoria leaf spot', 'grape leaf black rot',
     'COW', 'pig'
 ]
+np.random.seed(42)
+colors = [np.random.randint(0, 255, size=3).tolist() for _ in range(len(model.names))]
 
-
-colors = [np.random.randint(0, 255, size=3).tolist() for _ in range(88)]
-
-
+# --- Main Logic ---
 cap = cv2.VideoCapture(0)
 if not cap.isOpened():
     print("Error: Could not open webcam.")
@@ -39,7 +34,7 @@ if not cap.isOpened():
 while True:
     success, frame = cap.read()
     if success:
-        results = model(frame, stream=True)
+        results = model(frame, stream=True, verbose=False)
 
         for r in results:
             boxes = r.boxes
@@ -48,27 +43,32 @@ while True:
                 cls_id = int(box.cls[0])
                 class_name = model.names[cls_id]
 
-                
                 if class_name in HIGH_ACCURACY_CLASSES and confidence > CONFIDENCE_THRESHOLD:
-                    
-                    
                     color = colors[cls_id]
+                    x1, y1, x2, y2 = map(int, box.xyxy[0])
+                    
 
-                    x1, y1, x2, y2 = box.xyxy[0]
-                    x1, y1, x2, y2 = int(x1), int(y1), int(x2), int(y2)
                     cv2.rectangle(frame, (x1, y1), (x2, y2), color, 3)
 
                     label = f'{class_name} {confidence:.2f}'
+                    (text_width, text_height), baseline = cv2.getTextSize(label, cv2.FONT_HERSHEY_SIMPLEX, 0.7, 2)
                     
+                    # Position for the background rectangle of the label
+                    label_bg_x2 = x1 + text_width + 10
+                    label_bg_y2 = y1 + text_height + baseline + 10
+                    
+                    # Position for the text itself
+                    text_x = x1 + 5
+                    text_y = y1 + text_height + 5
+
                     if confidence > HIGH_CONFIDENCE_THRESHOLD:
 
-                        (text_width, text_height), _ = cv2.getTextSize(label, cv2.FONT_HERSHEY_SIMPLEX, 0.9, 2)
-                        cv2.rectangle(frame, (x1, y1 - 10 - text_height), (x1 + text_width, y1), (255, 255, 255), -1)
-
-                        cv2.putText(frame, label, (x1, y1 - 10), cv2.FONT_HERSHEY_SIMPLEX, 0.9, (0, 0, 0), 2)
+                        cv2.rectangle(frame, (x1, y1), (label_bg_x2, label_bg_y2), (255, 255, 255), -1)
+                        cv2.putText(frame, label, (text_x, text_y), cv2.FONT_HERSHEY_SIMPLEX, 0.7, (0, 0, 0), 2)
                     else:
 
-                        cv2.putText(frame, label, (x1, y1 - 10), cv2.FONT_HERSHEY_SIMPLEX, 0.9, color, 2)
+                        cv2.rectangle(frame, (x1, y1), (label_bg_x2, label_bg_y2), color, -1)
+                        cv2.putText(frame, label, (text_x, text_y), cv2.FONT_HERSHEY_SIMPLEX, 0.7, (255, 255, 255), 2)
 
         cv2.imshow("YOLOv8 Live Detection (Filtered)", frame)
 
