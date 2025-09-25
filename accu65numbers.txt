@@ -1,0 +1,101 @@
+📊 DATASET ANALYSIS REPORT 
+========================================
+
+Total Images per Split:    
+  - Train:      32774 images
+  - Valid:      2665 images
+  - Test:       1806 images
+
+Total Instances per Class (across all splits):        
+  - ID  0 | Black Rust                               | 29 instances
+  - ID  1 | Brown Rust                               | 37 instances
+  - ID  2 | Healthy Wheat                            | 852 instances
+  - ID  3 | Yellow Rust                              | 56 instances
+  - ID  4 | apple black rot                          | 730 instances
+  - ID  5 | apple healthy                            | 730 instances
+  - ID  6 | apple scab                               | 725 instances
+  - ID  7 | bell pepper bacterial spot               | 731 instances
+  - ID  8 | bell pepper healthy                      | 730 instances
+  - ID  9 | cassava Brown Streak Disease             | 2162 instances
+  - ID 10 | cassava bacterial blight                 | 1153 instances
+  - ID 11 | cassava green mottle                     | 2295 instances
+  - ID 12 | cedar apple rust                         | 568 instances
+  - ID 13 | cherry healthy                           | 724 instances
+  - ID 14 | cherry powdery mildew                    | 715 instances
+  - ID 15 | corn cerespora leaf spot                 | 729 instances
+  - ID 16 | corn common rust                         | 740 instances
+  - ID 17 | corn healthy                             | 743 instances
+  - ID 18 | grape black rot                          | 726 instances
+  - ID 19 | grape esca                               | 725 instances
+  - ID 20 | grape healthy                            | 750 instances
+  - ID 21 | grape leaf blight                        | 745 instances
+  - ID 22 | healthy cassava                          | 1132 instances
+  - ID 23 | mosaic cassava                           | 0 instances
+  - ID 24 | northern leaf blight                     | 761 instances
+  - ID 25 | orange citrus greening                   | 728 instances
+  - ID 26 | peach bacterial spot                     | 720 instances
+  - ID 27 | peach healthy                            | 723 instances
+  - ID 28 | potato early blight                      | 724 instances
+  - ID 29 | potato healthy                           | 312 instances
+  - ID 30 | potato late blight                       | 734 instances
+  - ID 31 | rice brown spot                          | 746 instances
+  - ID 32 | rice healthy                             | 693 instances
+  - ID 33 | rice hispa                               | 688 instances
+  - ID 34 | rice leaf blast                          | 724 instances
+  - ID 35 | spider mites two-spotted spider mite     | 582 instances
+  - ID 36 | squash powdery mildew                    | 814 instances
+  - ID 37 | strawberry healthy                       | 730 instances
+  - ID 38 | strawberry leaf scorch                   | 813 instances
+  - ID 39 | tomato bacterial spot                    | 734 instances
+  - ID 40 | tomato early blight                      | 749 instances
+  - ID 41 | tomato late blight                       | 817 instances
+  - ID 42 | tomato leaf healthy                      | 732 instances
+  - ID 43 | tomato leaf mould                        | 726 instances
+  - ID 44 | tomato septoria leaf spot                | 0 instances
+  - ID 45 | Apple Scab Leaf                          | 171 instances
+  - ID 46 | Apple leaf                               | 242 instances
+  - ID 47 | Apple rust leaf                          | 178 instances
+  - ID 48 | Bell_pepper leaf spot                    | 323 instances
+  - ID 49 | Bell_pepper leaf                         | 263 instances
+  - ID 50 | Blueberry leaf                           | 838 instances
+  - ID 51 | Cherry leaf                              | 239 instances
+  - ID 52 | Corn Gray leaf spot                      | 76 instances
+  - ID 53 | Corn leaf blight                         | 368 instances
+  - ID 54 | Corn rust leaf                           | 127 instances
+  - ID 55 | Peach leaf                               | 589 instances
+  - ID 56 | Potato leaf early blight                 | 11 instances
+  - ID 57 | Potato leaf late blight                  | 318 instances
+  - ID 58 | Potato leaf                              | 245 instances
+  - ID 59 | Raspberry leaf                           | 556 instances
+  - ID 60 | Soyabean leaf                            | 266 instances
+  - ID 61 | Soybean leaf                             | 15 instances
+  - ID 62 | Squash Powdery mildew leaf               | 252 instances
+  - ID 63 | Strawberry leaf                          | 473 instances
+  - ID 64 | Tomato Early blight leaf                 | 212 instances
+  - ID 65 | Tomato Septoria leaf spot                | 1160 instances
+  - ID 66 | Tomato leaf bacterial spot               | 400 instances
+  - ID 67 | Tomato leaf late blight                  | 280 instances
+  - ID 68 | Tomato leaf mosaic virus                 | 218 instances
+  - ID 69 | Tomato leaf yellow virus                 | 261 instances
+  - ID 70 | Tomato leaf                              | 801 instances
+  - ID 71 | Tomato mold leaf                         | 295 instances
+  - ID 72 | Tomato two spotted spider mites leaf     | 2 instances
+  - ID 73 | grape leaf black rot                     | 220 instances
+  - ID 74 | grape leaf                               | 133 instances
+  - ID 75 | chilli0                                  | 0 instances
+  - ID 76 | chilli1                                  | 0 instances
+  - ID 77 | chilli2                                  | 0 instances
+  - ID 78 | chilli3                                  | 0 instances
+  - ID 79 | chilli4                                  | 0 instances
+  - ID 80 | chilli5                                  | 0 instances
+  - ID 81 | chilli6                                  | 0 instances
+  - ID 82 | chilli7                                  | 0 instances
+  - ID 83 | COW            
+                          | 3553 instances
+  - ID 84 | horse          
+                          | 435 instances
+  - ID 85 | pig            
+                          | 11285 instances
+  - ID 86 | sheep          
+                          | 4176 instances
+  - ID 87 | undefined                                
