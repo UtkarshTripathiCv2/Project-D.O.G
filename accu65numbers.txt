@@ -1,6 +1,11 @@
 📊 DATASET ANALYSIS REPORT 
 ========================================
 
+in final 
+ - train: 15220 images   
+   - valid: 1220 images    
+   - test: 817 images 
+
 Total Images per Split:    
   - Train:      32774 images
   - Valid:      2665 images
