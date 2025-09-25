@@ -1,0 +1,27 @@
+Class Name	mAP50-95 Score
+Healthy Wheat	0.952
+corn cerespora leaf spot	0.914
+corn common rust	0.981
+corn healthy	0.995
+potato early blight	0.992
+potato healthy	0.987
+potato late blight	0.977
+rice brown spot	0.852
+rice healthy	0.626
+rice hispa	0.649
+rice leaf blast	0.714
+spider mites two-spotted spider mite	0.979
+squash powdery mildew	0.918
+strawberry healthy	0.99
+strawberry leaf scorch	0.932
+tomato bacterial spot	0.99
+tomato early blight	0.98
+tomato late blight	0.925
+tomato leaf healthy	0.987
+tomato leaf mould	0.96
+Corn rust leaf	0.773
+Strawberry leaf	0.605
+Tomato Septoria leaf spot	0.683
+COW	0.829
+pig	0.795
+Total Sum	21.687
