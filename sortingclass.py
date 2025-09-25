@@ -4,10 +4,14 @@ from pathlib import Path
 import yaml
 from collections import Counter
 
+# --- CONFIGURATION ---
+
+# 1. Set the paths to your existing dataset and the new one to be created.
 original_dataset_path = Path(r"C:\Users\HP\Desktop\master_dataset")
 output_dataset_path = Path(r"C:\Users\HP\Desktop\master_dataset_filtered_0.6")
 original_yaml_path = original_dataset_path / "master.yaml"
 
+# 2. List of classes to KEEP (mAP50-95 > 0.6 from your results).
 high_accuracy_classes_to_keep = [
     'Healthy Wheat',
     'corn cerespora leaf spot',
@@ -48,7 +52,16 @@ def process_and_remap_dataset():
     try:
         with open(original_yaml_path, 'r') as f:
             original_data = yaml.safe_load(f)
-        original_class_list = original_data['names']
+        
+        # --- FIXED LOGIC TO HANDLE DICTIONARY OR LIST FORMAT IN YAML ---
+        original_names_data = original_data['names']
+        if isinstance(original_names_data, dict):
+            # If names are a dictionary {0: 'name1', 1: 'name2'}, convert to a sorted list
+            original_class_list = [original_names_data[i] for i in sorted(original_names_data.keys())]
+        else:
+            # Otherwise, assume it's already a list
+            original_class_list = original_names_data
+        
         print(f"✅ Loaded original YAML with {len(original_class_list)} classes.")
     except Exception as e:
         print(f"❌ Error reading {original_yaml_path}: {e}")
