@@ -25,3 +25,7 @@ Tomato Septoria leaf spot	0.683
 COW	0.829
 pig	0.795
 Total Sum	21.687
+
+- train: 16902 images
+   - valid: 1354 images
+   - test: 887 images
